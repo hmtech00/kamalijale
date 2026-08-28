@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Kamal Ijale</title>
+<meta name="description" content="Get in touch with Kamal Ijale for styling consultations, editorial bookings or creative direction projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@400;500;600&family=Orbitron:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header is-solid">
+  <a href="index.html" class="brand">Kamal Ijale</a>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+</header>
+
+<section style="padding-top:9rem;">
+  <div class="container contact-grid">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <h1 style="margin-bottom:0.5em;">Let's Talk About Your Project</h1>
+      <p style="max-width:44ch; margin-bottom:2rem;">Whether it's a single editorial shoot, a season-long client relationship, or full creative direction for a collection — get in touch and Kamal will follow up directly.</p>
+
+      <div class="contact-item">
+        <span class="label">Email</span>
+        <p style="margin:0;">info@kamalijale.com</p>
+      </div>
+
+      <div class="contact-item">
+        <span class="label">Instagram</span>
+        <p style="margin:0;"><a href="https://www.instagram.com/kamal.ijale/" target="_blank" rel="noopener" style="color:var(--accent);">@kamal.ijale</a></p>
+      </div>
+    </div>
+
+    <div>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Tell Kamal about your project — event date, shoot type, or the look you're going for."></textarea>
+        </div>
+        <button type="submit" class="btn btn-accent">Send Message</button>
+        <p class="form-status" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span class="brand">Kamal Ijale</span>
+    <ul class="foot-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://www.instagram.com/kamal.ijale/" target="_blank" rel="noopener">Instagram</a></li>
+    </ul>
+    <p class="fine-print">© <span id="year"></span> Kamal Ijale. All rights reserved.</p>
+    <p class="fine-print">Developed by <a href="https://www.otmdigital.online" target="_blank" rel="noopener" style="color:var(--ink-muted); text-decoration:underline;">OTM Digital</a></p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
