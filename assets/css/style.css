@@ -150,20 +150,21 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 }
 
 /* ---------- Hero ---------- */
-/* hero.jpeg (1440x1920, portrait) is Kamal walking through a courtyard at a
-   Milan Fashion Week event — he's roughly centered horizontally, with his
-   face/torso around 35-55% down the frame. On wide desktop viewports the
-   crop is height-constrained (shows a horizontal band); "center 30%" keeps
-   that band on his face rather than the sky/building above or his feet
-   below. On tall mobile viewports the crop is width-constrained instead,
-   and centering works fine since he's near-centered horizontally. */
+/* hero.jpeg (1440x1920, portrait) is Kamal mid-stride in a fringed knit and
+   white eyelet trousers, from his own Instagram carousel. He sits slightly
+   right of center horizontally (~64%) with his face/torso around 20-30%
+   down the frame. On wide desktop viewports the crop is height-constrained
+   (shows a horizontal band); "60% 28%" keeps that band on his face rather
+   than the ceiling rig above or his legs below. On tall mobile viewports
+   the crop is width-constrained instead, and 60% keeps him just off-center
+   rather than dead-centered. */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: flex-end;
   background-size: cover;
-  background-position: center 62%;
+  background-position: 60% 28%;
   overflow: hidden;
 }
 .hero::after {
