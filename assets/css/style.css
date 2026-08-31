@@ -150,23 +150,21 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 }
 
 /* ---------- Hero ---------- */
-/* hero.jpeg is a wide shot with the subject sitting in the left third and
-   empty backdrop filling the rest. On a narrow/tall viewport, cover-fit
-   crops to a thin vertical slice — centered horizontally that slice lands
-   between the face and the empty side, cutting the face out. Desktop stays
-   centered (its crop is width-fit, so it shows the full subject already);
-   mobile shifts the anchor left toward the face instead. */
+/* hero.jpeg (1440x1920, portrait) is Kamal walking through a courtyard at a
+   Milan Fashion Week event — he's roughly centered horizontally, with his
+   face/torso around 35-55% down the frame. On wide desktop viewports the
+   crop is height-constrained (shows a horizontal band); "center 30%" keeps
+   that band on his face rather than the sky/building above or his feet
+   below. On tall mobile viewports the crop is width-constrained instead,
+   and centering works fine since he's near-centered horizontally. */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: flex-end;
   background-size: cover;
-  background-position: center 20%;
+  background-position: center 62%;
   overflow: hidden;
-}
-@media (max-width: 700px) {
-  .hero { background-position: 22% 15%; }
 }
 .hero::after {
   content: "";
