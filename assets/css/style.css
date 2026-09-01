@@ -257,15 +257,25 @@ section { padding: clamp(4rem, 9vw, 7.5rem) 0; }
 .filter-bar button:hover { color: var(--ink); border-color: var(--accent); }
 
 /* ---------- About / split layout ---------- */
+/* align-items:start (not center) so the image sits flush with the top of
+   the text column instead of being vertically centered against it — on
+   longer bios (About page) a centered short image drifts noticeably far
+   down the section. The image also sticks while the text scrolls past it,
+   on viewports tall enough to fit it. */
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(2rem, 6vw, 5rem);
-  align-items: center;
+  align-items: start;
 }
-.split img { width: 100%; }
+.split img {
+  width: 100%;
+  position: sticky;
+  top: 6rem;
+}
 @media (max-width: 860px) {
   .split { grid-template-columns: 1fr; }
+  .split img { position: static; }
 }
 
 .placeholder-note {
