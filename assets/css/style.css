@@ -198,6 +198,43 @@ section { padding: clamp(4rem, 9vw, 7.5rem) 0; }
 }
 .section-head h2 { margin: 0; }
 
+/* ---------- Testimonials ---------- */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.testimonial-card {
+  border-top: 2px solid var(--accent);
+  padding-top: 1.4rem;
+}
+.testimonial-card .rating {
+  font-family: var(--font-futuristic);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+.testimonial-card .quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--ink);
+  margin-bottom: 1.2rem;
+}
+.testimonial-card .author {
+  font-family: var(--font-futuristic);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+@media (max-width: 860px) {
+  .testimonial-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
 /* ---------- Client / work grid ---------- */
 /* Note: the container has no background of its own (an odd item count would
    otherwise leave a trailing empty grid cell showing a stray colored box —
