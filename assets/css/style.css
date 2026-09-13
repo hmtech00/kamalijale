@@ -150,21 +150,20 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 }
 
 /* ---------- Hero ---------- */
-/* hero.jpeg (1440x1920, portrait) is Kamal mid-stride in a fringed knit and
-   white eyelet trousers, from his own Instagram carousel. He sits slightly
-   right of center horizontally (~64%) with his face/torso around 20-30%
-   down the frame. On wide desktop viewports the crop is height-constrained
-   (shows a horizontal band); "60% 28%" keeps that band on his face rather
-   than the ceiling rig above or his legs below. On tall mobile viewports
-   the crop is width-constrained instead, and 60% keeps him just off-center
-   rather than dead-centered. */
+/* hero.jpeg (1440x1798, portrait) is from Kamal's "Breaking Bound" editorial
+   for L'Officiel Italia: a beaded red fringe veil/cape over black tights,
+   shot front-on and roughly centered horizontally. The veil and beaded
+   bodice (the most graphic part of the look) sit in the top third of the
+   frame; "50% 15%" keeps that in view on both height-constrained desktop
+   crops and width-constrained mobile crops, rather than cropping into the
+   plain red trousers below. */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: flex-end;
   background-size: cover;
-  background-position: 60% 28%;
+  background-position: 50% 15%;
   overflow: hidden;
 }
 .hero::after {
