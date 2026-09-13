@@ -162,11 +162,13 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
   background-size: cover;
   overflow: hidden;
 }
-/* Wide/short viewports (desktop) crop far more of the image's height than
-   tall mobile viewports do, so the same Y position pushes the head off the
-   top edge behind the nav. Pull the visible slice upward on wide screens. */
+/* Portrait photo on a wide/short viewport: cover scales to match the
+   width, so most of the image's height overflows and gets cropped.
+   50% 50% (the default) centers on empty white space above the model's
+   waist here, cutting the head off behind the nav. Bias upward so the
+   figure — not the blank backdrop — sits centered in frame. */
 @media (min-width: 900px) {
-  .hero { background-position: 50% 4% !important; }
+  .hero { background-position: 50% 40% !important; }
 }
 .hero::after {
   content: "";
