@@ -28,32 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   }
 
-  // Portfolio filter (portfolio.html only — no-op elsewhere)
-  const filterBar = document.querySelector('.filter-bar');
-  const cards = document.querySelectorAll('[data-category]');
-  if (filterBar && cards.length) {
-    const applyFilter = (filter) => {
-      const btn = filterBar.querySelector(`button[data-filter="${filter}"]`);
-      if (!btn) return;
-      filterBar.querySelectorAll('button').forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
-      cards.forEach((card) => {
-        const match = filter === 'all' || card.dataset.category === filter;
-        card.style.display = match ? '' : 'none';
-      });
-    };
-
-    filterBar.addEventListener('click', (e) => {
-      const btn = e.target.closest('button[data-filter]');
-      if (!btn) return;
-      applyFilter(btn.dataset.filter);
-    });
-
-    // Deep-link support: portfolio.html#filter=editorial pre-applies a filter on load
-    const hashMatch = window.location.hash.match(/filter=([\w-]+)/);
-    if (hashMatch) applyFilter(hashMatch[1]);
-  }
-
   // Contact form -> Formspree (fetch, no page reload)
   // NOTE: replace YOUR_FORM_ID with the real Formspree endpoint before launch.
   const form = document.querySelector('.contact-form');
