@@ -403,6 +403,46 @@ form.contact-form button { align-self: flex-start; cursor: pointer; }
 }
 .press-mark strong { color: var(--ink); font-weight: 600; }
 
+/* ---------- Press articles (news.html) ---------- */
+.press-list {
+  display: grid;
+  gap: 2rem;
+}
+.press-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--rule);
+}
+.press-card:last-child { border-bottom: 1px solid var(--rule); }
+.press-card .outlet {
+  font-family: var(--font-futuristic);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.press-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.3rem;
+}
+.press-card .press-date {
+  font-family: var(--font-futuristic);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.press-card p { color: var(--ink); opacity: 0.85; max-width: 65ch; }
+@media (max-width: 700px) {
+  .press-card { grid-template-columns: 1fr; }
+}
+
 /* ---------- Services ---------- */
 .services-grid {
   display: grid;
