@@ -162,6 +162,12 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
   background-size: cover;
   overflow: hidden;
 }
+/* Wide/short viewports (desktop) crop far more of the image's height than
+   tall mobile viewports do, so the same Y position pushes the head off the
+   top edge behind the nav. Pull the visible slice upward on wide screens. */
+@media (min-width: 900px) {
+  .hero { background-position: 50% 4% !important; }
+}
 .hero::after {
   content: "";
   position: absolute; inset: 0;
