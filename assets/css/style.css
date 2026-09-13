@@ -150,25 +150,46 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 }
 
 /* ---------- Hero ---------- */
-/* hero.jpeg (1440x1798, portrait) is from Kamal's "Breaking Bound" editorial
-   for L'Officiel Italia: a beaded red fringe veil/cape over black tights,
-   shot front-on and roughly centered horizontally. The veil and beaded
-   bodice (the most graphic part of the look) sit in the top third of the
-   frame; "50% 15%" keeps that in view on both height-constrained desktop
-   crops and width-constrained mobile crops, rather than cropping into the
-   plain red trousers below. */
+/* The hero is a full-bleed crossfade carousel of 6 work photos (no portrait
+   of Kamal himself) rather than a single static image. Each .hero-slide is
+   a stacked, absolutely-positioned background layer; a shared keyframe
+   animation fades each one in and out in turn, staggered by animation-delay
+   so exactly one is visible at a time. Cycle length: 6 slides x 6s = 36s. */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: flex-end;
-  background-size: cover;
-  background-position: 50% 15%;
   overflow: hidden;
+}
+.hero-slide {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  animation: heroCrossfade 36s infinite;
+}
+.hero-slide:nth-child(1) { animation-delay: 0s; }
+.hero-slide:nth-child(2) { animation-delay: 6s; }
+.hero-slide:nth-child(3) { animation-delay: 12s; }
+.hero-slide:nth-child(4) { animation-delay: 18s; }
+.hero-slide:nth-child(5) { animation-delay: 24s; }
+.hero-slide:nth-child(6) { animation-delay: 30s; }
+@keyframes heroCrossfade {
+  0% { opacity: 0; }
+  3% { opacity: 1; }
+  14% { opacity: 1; }
+  19% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide { animation: none; opacity: 0; }
+  .hero-slide:first-child { opacity: 1; }
 }
 .hero::after {
   content: "";
   position: absolute; inset: 0;
+  z-index: 1;
   background: linear-gradient(to top, rgba(18,16,15,0.96) 0%, rgba(18,16,15,0.55) 55%, rgba(18,16,15,0.6) 100%);
 }
 .hero-content {
