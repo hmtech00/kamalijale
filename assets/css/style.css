@@ -171,14 +171,14 @@ p { margin: 0 0 1em; color: var(--ink-muted); }
 @media (min-width: 900px) {
   .hero { background-position: 50% 40% !important; }
 }
-/* The source photo is only 853x1280 — a web-res export, not a print-res
-   original. background-size:cover scales it to match the viewport width,
-   so past ~1600px it's stretched more than ~1.9x native and visibly
-   softens. Cap the render width there instead of letting it keep scaling
-   up with the screen; .hero's own background-color fills the resulting
-   side letterbox, which the dark vignette already blends into. */
-@media (min-width: 1600px) {
-  .hero { background-size: 1600px auto !important; }
+/* The source photo is 1333x2000. background-size:cover scales it to
+   match the viewport width, so past ~2500px it's stretched more than
+   ~1.9x native and visibly softens. Cap the render width there instead
+   of letting it keep scaling up with the screen; .hero's own
+   background-color fills the resulting side letterbox, which the dark
+   vignette already blends into. */
+@media (min-width: 2500px) {
+  .hero { background-size: 2500px auto !important; }
 }
 .hero::after {
   content: "";
